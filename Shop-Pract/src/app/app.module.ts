@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 //Routes
 import { app_routing } from "./app.routes";
 
+//Services
+import { MainService } from "./service/main.service";
+import { HttpModule } from "@angular/http";
+
 import { AppComponent } from './app.component';
 import { IndexComponent } from './componentes/index/index.component';
 import { ProductComponent } from './componentes/product/product.component';
@@ -24,9 +28,10 @@ import { SingleComponent } from './componentes/single/single.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     app_routing
   ],
-  providers: [],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
