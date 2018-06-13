@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MainService } from "./service/main.service";
+// import {MainService } from "./service/main.service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import {MainService } from "./service/main.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor( public ms:MainService){
+  constructor( ){
     
   }
 }
