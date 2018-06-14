@@ -6,6 +6,7 @@ import { app_routing } from "./app.routes";
 
 //Services
 import { MainService } from "./service/main.service";
+import { ProductService } from "./service/product.service";
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
@@ -31,7 +32,10 @@ import { SingleComponent } from './componentes/single/single.component';
     HttpModule,
     app_routing
   ],
-  providers: [MainService],
+  providers: [
+    MainService, 
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
