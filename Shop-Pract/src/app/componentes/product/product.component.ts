@@ -15,10 +15,11 @@ export class ProductComponent implements OnInit {
 
   getBackground(image) {
     return this.img.bypassSecurityTrustStyle(`url(${image})`);
-}
+  }
 
   ngOnInit() {
     this.ps.ProductData().subscribe(data =>{
+      console.log(data.json());
       this.Producto = data.json();
     });
   }
