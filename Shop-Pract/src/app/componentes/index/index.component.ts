@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from "../../service/main.service";
-import { ProductService } from "../../service/product.service";
 import {IndexProdService} from "../../service/index-prod.service";
 
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,9 +12,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class IndexComponent implements OnInit  {
 
   public Minfo;
-  public IndexProduct;
+  public IndexProducto;
 
-  constructor(private serv:MainService, private ps:ProductService, private img:DomSanitizer, private idx:IndexProdService) { }
+  constructor(private serv:MainService, private img:DomSanitizer, private idx:IndexProdService) { }
 
   getBackground(image) {
     return this.img.bypassSecurityTrustStyle(`url(${image})`);
@@ -36,7 +35,7 @@ export class IndexComponent implements OnInit  {
 
   public Productos(){
     this.idx.InfoProductos().subscribe(data =>{
-      this.IndexProduct = data.json();
+      this.IndexProducto = data.json();
     });
   }
 }
