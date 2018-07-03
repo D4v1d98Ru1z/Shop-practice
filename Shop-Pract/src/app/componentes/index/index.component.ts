@@ -26,6 +26,7 @@ export class IndexComponent implements OnInit  {
   ngOnInit(){
     this.infoPrincipal();
     this.Productos();
+    this.jsoInfo();
   }
 
   public infoPrincipal(){
