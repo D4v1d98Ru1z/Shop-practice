@@ -21,7 +21,7 @@ export class IndexComponent implements OnInit  {
   getBackground(image) {
     return this.img.bypassSecurityTrustStyle(`url(${image})`);
   }
-
+  s:boolean = false;
 
   ngOnInit(){
     this.infoPrincipal();
@@ -38,7 +38,6 @@ export class IndexComponent implements OnInit  {
 
   public Productos(){
     this.idx.InfoProductos().subscribe(data =>{
-      console.log(data.json());
       this.IndexProducto = data.json();
     });
   }
@@ -48,6 +47,7 @@ export class IndexComponent implements OnInit  {
     this.jso.llamada().subscribe(data=>{
       console.log(data.json());
       this.jInfo = data.json();
+      this.s = true;
     });
   }
 }

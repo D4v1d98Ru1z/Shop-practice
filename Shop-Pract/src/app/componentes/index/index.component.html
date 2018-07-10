@@ -431,10 +431,10 @@
 
       <div class="row copyright">
         <div class="col-md-12 text-center">
-          <p>
-            <small class="block">&copy; 2018. All Rights Reserved.</small>
-            <small class="block">Made by
-              <a href="http://github.com/D4v1d98Ru1z" target="_blank">David Ruiz</a>
+          <p *ngIf = "s">
+            <small class="block">&copy; {{ jInfo.derechos }}</small>
+            <small class="block">{{ jInfo.made }}
+              <a href="http://github.com/D4v1d98Ru1z" target="_blank">{{ jInfo.nombre }}</a>
             </small>
           </p>
         </div>
