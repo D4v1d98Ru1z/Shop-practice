@@ -1,5 +1,5 @@
 import{ RouterModule, Routes } from "@angular/router";
-import { IndexComponent, ProductComponent } from "./componentes/index.paginas";
+import { IndexComponent, ProductComponent, SearchComponent } from "./componentes/index.paginas";
 import { AboutComponent } from "./componentes/about/about.component";
 import { ContactComponent } from "./componentes/contact/contact.component";
 import { ServicesComponent } from "./componentes/services/services.component";
@@ -12,6 +12,7 @@ const app_routes: Routes = [
     { path: 'contact', component: ContactComponent},
     { path: 'services', component: ServicesComponent },
     { path: 'single', component: SingleComponent},
+    { path: 'search/:id', component: SearchComponent }, //id para generar una ruta interna en la busqueda
     { path: '**', pathMatch: 'full', redirectTo: 'index' }
 ];
 
