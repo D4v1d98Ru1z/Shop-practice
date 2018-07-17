@@ -20,15 +20,15 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.ps.ProductData().subscribe(data =>{
-      console.log(data.json());
+      //console.log(data.json());
       this.Producto = data.json();
     });
   }
 
   //metodo para busqueda
   SearchProduct( id:string ){
-    console.log(id);
-    this.router.navigate( ['search', id] );
+    //console.log(id);
+    this.router.navigate( ['product', id] ); 
   }
 
 }

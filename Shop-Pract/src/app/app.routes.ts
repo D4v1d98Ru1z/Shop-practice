@@ -12,7 +12,7 @@ const app_routes: Routes = [
     { path: 'contact', component: ContactComponent},
     { path: 'services', component: ServicesComponent },
     { path: 'single', component: SingleComponent},
-    { path: 'search/:id', component: SearchComponent }, //id para generar una ruta interna en la busqueda
+    { path: 'product/:id', component: SearchComponent }, //id para generar una ruta interna en la busqueda
     { path: '**', pathMatch: 'full', redirectTo: 'index' }
 ];
 
