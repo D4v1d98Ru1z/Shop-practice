@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { ProductService } from "../../service/product.service";
-//import { DomSanitizer } from '@angular/platform-browser';
-
+//import { DomSanitizer } from '@angular/platform-browser
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -18,29 +18,33 @@ export class SearchComponent implements OnInit {
     route.params.subscribe(parametros =>{
       this.termino = parametros['id'];
       console.log(this.termino);
-      this.BusquedaProducto(this.termino);
+      this.ImportacionFirebase();      
     });
    }
 
-   BusquedaProducto(id:string){
+   
+
+  ngOnInit() {
+    
+    // this.BusquedaProducto();
+  }
+// 
+  ImportacionFirebase(){
+    this.PS.ProductData().map(response => response.json()).subscribe(data =>{
+      console.log(data);      
+      this.Producto = data;
+      this.BusquedaProducto(this.termino);
+    });
+  }
+
+  
+  BusquedaProducto(id:string){
     console.log("Buscando producto");
     console.log(this.Producto.length);
     this.Producto.forEach(element => {
       console.log(element);
     });
   }
-
-  ngOnInit() {
-    this.ImportacionFirebase();
-  }
-
-  ImportacionFirebase(){
-    this.PS.ProductData().subscribe(data =>{
-    console.log(data.json());
-    this.Producto = data.json();
-    });
-  }
-
   
 
 }
