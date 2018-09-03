@@ -27,8 +27,11 @@ export class ProductComponent implements OnInit {
 
   //metodo para busqueda
   SearchProduct( id:string ){
+    if(id.length < 1){
+      return;
+    }
     //console.log(id);
-    this.router.navigate( ['product', id] ); 
+    this.router.navigate( ['/product', id] ); 
   }
 
 }
