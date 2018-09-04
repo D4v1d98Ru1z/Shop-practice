@@ -31,7 +31,7 @@ export class ProductComponent implements OnInit {
       return;
     }
     //console.log(id);
-    this.router.navigate( ['/product', id] ); 
+    this.router.navigate( ['product', id] ); 
   }
 
 }
